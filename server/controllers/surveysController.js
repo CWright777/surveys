@@ -30,5 +30,28 @@ module.exports = {
         console.log('yay')
       }
     })
+  },
+  remove: function(req,res){
+    Survey.remove({_id: req.params.id}, function(err,removed){
+      if(err){
+        console.log(err)
+      } else {
+        res.json()
+      }
+    })
+  },
+  update: function(req,res){
+    Survey.findOne({_id:req.params.id},function(err,survey){
+      var temp = parseInt(survey[req.params.option][1])
+      temp += 1
+      survey[req.params.option][1] = temp.toString()
+      survey.save(function(err,survey){
+        if(err){
+          console.log(err)
+        } else {
+          res.json(survey)
+        }
+      })
+    })
   }
 }

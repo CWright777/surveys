@@ -13,5 +13,9 @@ angular.module('appRoutes', []).config(['$routeProvider', function($routeProvide
     templateUrl:'views/new.html',
     controller: 'surveysController'
   })
+  .when('/poll/:id', {
+    templateUrl:'views/show.html',
+    controller: 'surveysController'
+  })
 
 }]);

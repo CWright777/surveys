@@ -1,0 +1,32 @@
+<a href="#/dashboard">Go to Polls</a>
+<div>
+  <h1>{{pickedSurvey.question}}</h1>
+  <h3>Click the Vote button to Choose One</h3>
+  <table>
+    <tr>
+      <th>Option</th>
+      <th>Vote Count</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <th>{{pickedSurvey.option1[0]}}</th>
+      <th>{{pickedSurvey.option1[1]}}</th>
+      <th><button ng-click="addVote('option1')">Vote</button></th>
+    </tr>
+    <tr>
+      <th>{{pickedSurvey.option2[0]}}</th>
+      <th>{{pickedSurvey.option1[1]}}</th>
+      <th><button ng-click="addVote('option2')">Vote</button></th>
+    </tr>
+    <tr>
+      <th>{{pickedSurvey.option3[0]}}</th>
+      <th>{{pickedSurvey.option3[1]}}</th>
+      <th><button ng-click="addVote('option3')">Vote</button></th>
+    </tr>
+    <tr>
+      <th>{{pickedSurvey.option4[0]}}</th>
+      <th>{{pickedSurvey.option4[1]}}</th>
+      <th><button ng-click="addVote('option4')">Vote</button></th>
+    </tr>
+  </table>
+</div>

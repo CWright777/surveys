@@ -9,4 +9,19 @@ angular.module('surveyService', []).service('Survey', ['$http', function($http){
       callback(surveys)
     })
   }
+  this.show = function(surveyId,callback){
+    $http.get('/survey/' + surveyId).success(function(survey){
+      callback(survey);
+    })
+  }
+  this.update = function(surveyId,optionName,callback){
+    $http.patch('/survey/' + surveyId + '/' + optionName).success(function(survey){
+      callback(survey);
+    })
+  }
+  this.remove = function(id,callback){
+    $http.get("/delete/" + id).success(function(){
+      callback()
+    })
+  }
 }])

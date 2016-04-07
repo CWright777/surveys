@@ -1,6 +1,5 @@
 <div>
-  <a href="#/new">Create a New Poll</a>
-  {{surveys}}
+  <a href="#/new">Create a New Poll</a> | <a href="#/">Logout</a>
   <h1>Current Polls</h1>
   <form>
     <input type="text" ng-model='filter_name' placeholder='Search'>
@@ -12,10 +11,12 @@
       <th>Date Posted</th>
       <th>Action</th>
     </tr>
-    <tr ng-repeat="survey in surveys">
+    <tr ng-repeat="survey in surveys | filter: filter_name">
       <td>{{survey.user}}</td>
-      <td>{{survey.question}}</td>
+      <td><a href="#/poll/{{survey._id}}">{{survey.question}}</a></td>
       <td>{{survey.created_at | date: format:timezone}}</td>
+      <td>{{survey.user}}   {{currentUser}}</td>
+      <td ><span ng-hide="survey.user != currentUser"><button ng-click="delete(survey._id)">Delete</button></span></td>
     </tr>
   </table>
 </div>
