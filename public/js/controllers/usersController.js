@@ -3,7 +3,7 @@ angular.module('usersCtrl', []).controller('usersController', function($scope,Us
     User.create($scope.newUser, function(userId){
       $cookies.name = $scope.newUser.name
       $cookies.userId = userId
-      $location.path('/Somewhere/' + userId);
+      $location.path('/dashboard')
     })
   }
 })

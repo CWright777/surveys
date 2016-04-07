@@ -3,5 +3,7 @@ angular.module('exampleApp',[
     'ngCookies',
     'appRoutes',
     'usersCtrl',
-    'userService'
+    'surveysCtrl',
+    'userService',
+    'surveyService'
 ])

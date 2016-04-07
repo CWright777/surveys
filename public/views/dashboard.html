@@ -1,6 +1,21 @@
 <div>
+  <a href="#/new">Create a New Poll</a>
+  {{surveys}}
   <h1>Current Polls</h1>
   <form>
     <input type="text" ng-model='filter_name' placeholder='Search'>
   </form>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Survey Question</th>
+      <th>Date Posted</th>
+      <th>Action</th>
+    </tr>
+    <tr ng-repeat="survey in surveys">
+      <td>{{survey.user}}</td>
+      <td>{{survey.question}}</td>
+      <td>{{survey.created_at | date: format:timezone}}</td>
+    </tr>
+  </table>
 </div>

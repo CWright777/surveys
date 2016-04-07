@@ -5,5 +5,13 @@ angular.module('appRoutes', []).config(['$routeProvider', function($routeProvide
     templateUrl:'views/login.html',
     controller: 'usersController'
   })
+  .when('/dashboard', {
+    templateUrl:'views/dashboard.html',
+    controller: 'surveysController'
+  })
+  .when('/new', {
+    templateUrl:'views/new.html',
+    controller: 'surveysController'
+  })
 
 }]);
