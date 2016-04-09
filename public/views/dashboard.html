@@ -15,7 +15,6 @@
       <td>{{survey.user}}</td>
       <td><a href="#/poll/{{survey._id}}">{{survey.question}}</a></td>
       <td>{{survey.created_at | date: format:timezone}}</td>
-      <td>{{survey.user}}   {{currentUser}}</td>
       <td ><span ng-hide="survey.user != currentUser"><button ng-click="delete(survey._id)">Delete</button></span></td>
     </tr>
   </table>
